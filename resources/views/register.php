@@ -21,12 +21,13 @@
     <div class="card card-register mx-auto mt-5">
         <div class="card-header">新規登録</div>
         <div class="card-body">
-            <form>
+            <form method="post" action="/register1">
+                <?= csrf_field() ?>
                 <div class="form-group">
                     <div class="form-row">
                         <div class="col-md-12">
                             <div class="form-label-group">
-                                <input type="text" id="UserID" class="form-control" placeholder="ユーザーID" required="required" autofocus="autofocus">
+                                <input type="text" name="UserID" class="form-control" placeholder="ユーザーID" required="required" autofocus="autofocus">
                             </div>
                         </div>
                     </div>
@@ -35,12 +36,12 @@
                     <div class="form-row">
                         <div class="col-md-6">
                             <div class="form-label-group">
-                                <input type="password" id="inputPassword" class="form-control" placeholder="Password" required="required">
+                                <input type="password" name="inputPassword" class="form-control" placeholder="Password" required="required">
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-label-group">
-                                <input type="password" id="confirmPassword" class="form-control" placeholder="Confirm password" required="required">
+                                <input type="password" name="confirmPassword" class="form-control" placeholder="Confirm password" required="required">
                             </div>
                         </div>
                     </div>
@@ -48,25 +49,25 @@
                 <div class="form-group">
                     <div class="form-row">
                         <div class="col-md-12">
-                            <input type="text" class="form-control" placeholder="名前" required="required" id="name">
+                            <input type="text" class="form-control" placeholder="名前" required="required" name="name">
                         </div>
                     </div>
                 </div>
                 <div class="form-group">
                     <div class="form-row">
                         <div class="col-md-12">
-                            <input type="text" class="form-control" placeholder="住所" required="required" id="adress">
+                            <input type="text" class="form-control" placeholder="住所" required="required" name="address">
                         </div>
                     </div>
                 </div>
                 <div class="form-group">
                     <div class="form-row">
                         <div class="col-md-12">
-                            <input type="text" class="form-control" placeholder="生年月日" required="required" id="YearMonthDay">
+                            <input type="text" class="form-control" placeholder="生年月日" required="required" id="YearMonthDay" name="birth">
                             <script type="text/javascript">
                                 $('#YearMonthDay').datepicker({
                                     autoclose: true,
-                                    format: 'yyyy/mm/dd',
+                                    format: 'yyyy-mm-dd',
                                     language: 'ja',       // カレンダー日本語化のため
                                     minViewMode : 0
                                 });
@@ -74,7 +75,7 @@
                         </div>
                     </div>
                 </div>
-                <a class="btn btn-primary btn-block" href="login">登録</a>
+                <button class="btn btn-primary btn-block" type="submit" value="register">登録</button>
             </form>
             <div class="text-center">
                 <a class="d-block small mt-3" href="login">ログイン</a>

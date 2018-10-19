@@ -53,9 +53,6 @@
             <li class="nav-item">
                 <a class="nav-link text-dark" href="#tab3" data-toggle="tab">取引情報</a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link text-dark" href="#tab4" data-toggle="tab">通知</a>
-            </li>
         </ul>
         <div class="tab-content">
             <div class="tab-pane fade show active" id="tab1">
@@ -66,15 +63,18 @@
                                 <tr>
                                     <th scope="row">カテゴリ</th>
                                     <td>
-                                        <form>
+                                        <form action="index1" method="post">
                                             <div class="form-group">
-                                                <select class="form-control" id="category">
+                                                <select class="form-control" name="category">
                                                     <option id="null">カテゴリ選択</option>
-                                                    <option>1</option>
-                                                    <option>2</option>
-                                                    <option>3</option>
-                                                    <option>4</option>
-                                                    <option>5</option>
+                                                    <option>レディース</option>
+                                                    <option>メンズ</option>
+                                                    <option>ベビーキッズ</option>
+                                                    <option>インテリア</option>
+                                                    <option>ゲーム</option>
+                                                    <option>本</option>
+                                                    <option>家電</option>
+                                                    <option>その他</option>
                                                 </select>
                                             </div>
                                         </form>
@@ -114,7 +114,7 @@
                                                 </select>
                                             </div>
                                             <div class="form-group">
-                                                <button type="button" id="search" class="btn btn-dark btn-block form-control">登録</button>
+                                                <button type="button" id="search" class="btn btn-dark btn-block form-control">検索</button>
                                             </div>
                                         </form>
                                     </td>
@@ -138,66 +138,49 @@
             <div id="tab2" class="tab-pane fade">
                 <div class="container">
                     <div class="row justify-content-md-center">
+                        <form action="/productRegister" method="get">
                         <table class="table">
                             <tbody>
                             <tr>
                                 <th scope="row">カテゴリ</th>
                                 <td>
-                                    <form>
-                                        <div class="form-group">
-                                            <select class="form-control" id="category">
-                                                <option id="null">カテゴリ選択</option>
-                                                <option>1</option>
-                                                <option>2</option>
-                                                <option>3</option>
-                                                <option>4</option>
-                                                <option>5</option>
-                                            </select>
-                                        </div>
-                                    </form>
+                                    <div class="form-group">
+                                        <select class="form-control" name="category1">
+                                            <option>カテゴリ選択</option>
+                                            <option>レディース</option>
+                                            <option>メンズ</option>
+                                            <option>ベビーキッズ</option>
+                                            <option>インテリア</option>
+                                            <option>ゲーム</option>
+                                            <option>本</option>
+                                            <option>家電</option>
+                                            <option>その他</option>
+                                        </select>
+                                    </div>
                                 </td>
                             </tr>
                             <tr>
                                 <th scope="row">商品名</th>
                                 <td>
-                                    <form>
-                                        <div class="form-group">
-                                            <input type="text" class="form-control" id="productName" placeholder="商品名">
-                                        </div>
-                                    </form>
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" name="productName1" placeholder="商品名">
+                                    </div>
                                 </td>
                             </tr>
                             <tr>
                                 <th scope="row">金額</th>
                                 <td>
-                                    <form class="form-inline">
-                                        <div class="form-group">
-                                            <select class="form-control" id="money">
-                                                <option>0</option>
-                                                <option>1000</option>
-                                                <option>10000</option>
-                                                <option>100000</option>
-                                                <option>1000000</option>
-                                            </select>
-                                        </div>
-                                        ～
-                                        <div class="form-group">
-                                            <select class="form-control" id="money1">
-                                                <option>999</option>
-                                                <option>9999</option>
-                                                <option>99999</option>
-                                                <option>999999</option>
-                                                <option>9999999</option>
-                                            </select>
-                                        </div>
-                                        <div class="form-group">
-                                            <button type="button" id="search" class="btn btn-dark btn-block form-control">登録</button>
-                                        </div>
-                                    </form>
+                                    <div class="form-group">
+                                        <input type="number" class="form-control" name="productValue" placeholder="金額">
+                                    </div>
+                                    <div class="form-group">
+                                        <button type="submit" value="proRegister" class="btn btn-dark btn-block form-control">登録</button>
+                                    </div>
                                 </td>
                             </tr>
                             </tbody>
                         </table>
+                        </form>
                         <table class="table table-bordered">
                             <thead class="thead-dark">
                             <tr>
@@ -207,9 +190,19 @@
                             </tr>
                             </thead>
                             <tbody>
+                            <?php foreach($index as $products): ?>
                             <tr>
-                                <td></td>
+                                <td>
+                                    <?=$products->product_id?>
+                                </td>
+                                <td>
+                                    <?=$products->product_name?>
+                                </td>
+                                <td>
+                                    <?=$products->product_price?>
+                                </td>
                             </tr>
+                            <?php endforeach; ?>
                             </tbody>
                         </table>
                     </div>
@@ -257,11 +250,6 @@
                             </tbody>
                         </table>
                     </div>
-                </div>
-            </div>
-            <div id="tab4" class="tab-pane fade">
-                <div class="row justify-content-md-center">
-                test
                 </div>
             </div>
         </div>
