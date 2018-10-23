@@ -54,7 +54,7 @@
         </li>
     </ul>
     <div class="container">
-        <h3>取引中</h3>
+        <h5>取引中</h5>
         <table class="table table-bordered">
             <thead class="thead-dark">
             <tr>
@@ -75,7 +75,7 @@
             <?php endforeach; ?>
             </tbody>
         </table>
-        <h3>取引履歴</h3>
+        <h5>取引履歴</h5>
         <table class="table table-bordered">
             <thead class="thead-dark">
             <tr>

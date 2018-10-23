@@ -64,6 +64,7 @@
         </li>
     </ul>
     <div class="container">
+        <h5>取引中</h5>
         <table class="table table-bordered">
             <thead class="thead-light">
             <tr>
@@ -75,7 +76,26 @@
             </tr>
             </thead>
             <tbody>
-
+                <tr>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+        <h5>取引済み</h5>
+        <table class="table table-bordered">
+            <thead class="thead-light">
+            <tr>
+                <th scope="col">顧客ID</th>
+                <th scope="col">商品名</th>
+                <th scope="col">入庫</th>
+                <th scope="col">入金</th>
+                <th scope="col">出庫</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td></td>
+            </tr>
             </tbody>
         </table>
     </div>

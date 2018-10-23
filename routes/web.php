@@ -93,3 +93,7 @@ Route::get('/sendManage', function () {
 Route::get('/stockManage', function () {
     return view('stockManage');
 });
+
+Route::get('/loginManage', function () {
+    return view('loginManage');
+});

@@ -38,7 +38,7 @@
             </ul>
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link active" href="login">ログアウト<span class="sr-only">(current)</span></a>
+                    <a class="nav-link active" href="loginManage">ログアウト<span class="sr-only">(current)</span></a>
                 </li>
             </ul>
         </div>
