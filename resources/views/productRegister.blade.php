@@ -1,50 +1,9 @@
-<!DOCTYPE html>
-<html lang="ja">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>web開発授業</title>
-        <!-- Bootstrap4のCSS読み込み -->
-        <link href="/css/css/bootstrap.min.css" rel="stylesheet">
-        <!-- jQuery読み込み -->
-        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-        <!-- BootstrapのJS読み込み -->
-        <script src="/js/js/bootstrap.min.js"></script>
-    </head>
-    <body>
-        <nav class="navbar navbar-expand-md navbar-dark bg-dark">
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav4" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <a class="navbar-brand" href="/index"><h2>OIC MARKET</h2></a>
+@extends('layouts.app')
 
-            <div class="collapse navbar-collapse justify-content-around" id="navbarNav">
-
-                <ul class="navbar-nav">
-                    <li class="nav-item active">
-                        <a class="nav-link"></a>
-                    </li>
-                </ul>
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link"></a>
-                    </li>
-                </ul>
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link"></a>
-                    </li>
-                </ul>
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link active" href="login">ログアウト<span class="sr-only">(current)</span></a>
-                    </li>
-                </ul>
-            </div>
-        </nav>
-        <ul class="nav nav-tabs nav-fill bg-light" id="tab">
+@section('content')
+        <ul class="nav nav-fill bg-light">
             <li class="nav-item">
-                <a href="/index" class="nav-link text-dark">ホーム</a>
+                <a href="/" class="nav-link text-dark">ホーム</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link text-dark active">商品登録</a>
@@ -106,21 +65,8 @@
                     </tr>
                     </thead>
                     <tbody>
-                    <?php foreach($index as $products): ?>
-                        <tr>
-                            <td>
-                                <?=$products->product_id?>
-                            </td>
-                            <td>
-                                <?=$products->product_name?>
-                            </td>
-                            <td>
-                                <?=$products->product_price?>
-                            </td>
-                        </tr>
-                    <?php endforeach; ?>
+
                     </tbody>
                 </table>
         </div>
-    </body>
-</html>
+@endsection

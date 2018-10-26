@@ -13,14 +13,6 @@ class SystemDevelop extends Migration
      */
     public function up()
     {
-        Schema::create('members',function(Blueprint $table){
-            $table->increments('member_id');
-            $table->string('member_name');
-            $table->string('member_user');
-            $table->string('member_password');
-            $table->string('member_address');
-            $table->date('member_birth');
-        });
 
         Schema::create('products',function(Blueprint $table){
             $table->increments('product_id');
@@ -29,8 +21,8 @@ class SystemDevelop extends Migration
             $table->integer('product_price');
         });
         Schema::table('products',function(Blueprint $table){
-            $table->unsignedInteger('members_id');
-            $table->foreign('members_id')->references('member_id')->on('members');
+            $table->unsignedInteger('users_id');
+            $table->foreign('users_id')->references('id')->on('users');
         });
 
         Schema::create('receives',function(Blueprint $table){
@@ -97,7 +89,6 @@ class SystemDevelop extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('members');
         Schema::dropIfExists('products');
         Schema::dropIfExists('stocks');
         Schema::dropIfExists('orders');
@@ -106,11 +97,11 @@ class SystemDevelop extends Migration
         Schema::dropIfExists('manages');
         Schema::dropIfExists('receives');
 
-        Schema::table('products',function(Blueprint $table){
-            $table->dropForeign('products_members_id_foreign');
-        });
         Schema::table('stocks',function(Blueprint $table){
             $table->dropForeign('stocks_products_id_foreign');
+        });
+        Schema::table('products',function(Blueprint $table){
+            $table->dropForeign('products_users_id_foreign');
         });
         Schema::table('stocks',function(Blueprint $table){
             $table->dropForeign('stocks_orders_id_foreign');
