@@ -6,7 +6,7 @@
             <a class="nav-link active text-dark">会員管理</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link text-dark" href="/tradeManage">取引管理</a>
+            <a class="nav-link text-dark" href="{{ route('admin.tradeManage') }}">取引管理</a>
         </li>
         <li class="nav-item">
             <a class="nav-link text-dark" href="/stockManage">入庫管理</a>

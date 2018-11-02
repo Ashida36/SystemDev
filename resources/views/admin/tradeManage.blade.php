@@ -1,9 +1,9 @@
 @extends('layouts.app_admin')
 
 @section('content')
-    <ul class="nav nav-tabs nav-fill" id="tab">
+    <ul class="nav nav-fill">
         <li class="nav-item">
-            <a class="nav-link text-dark" href="admin">会員管理</a>
+            <a class="nav-link text-dark" href="{{ route('admin.home') }}">会員管理</a>
         </li>
         <li class="nav-item">
             <a class="nav-link text-dark active">取引管理</a>

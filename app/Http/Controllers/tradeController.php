@@ -11,6 +11,6 @@ class tradeController extends Controller
         $this->middleware('auth');
     }
     public function index(){
-        return view("tradeManage");
+        return view("trade");
     }
 }

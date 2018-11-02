@@ -1,8 +1,9 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class tradeManageController extends Controller
 {
@@ -11,6 +12,6 @@ class tradeManageController extends Controller
         $this->middleware('auth:admin');
     }
     public function index(){
-        return view("tradeManage");
+        return view("admin.tradeManage");
     }
 }
