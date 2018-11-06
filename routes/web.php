@@ -13,15 +13,7 @@
 
 
 
-Route::get('/productRegister1',function(){
-    $category=request()->get("category1");
-    $productName=request()->get("productName1");
-    $productValue=request()->get("productValue");
-    DB::insert("insert into products (product_category,product_name,product_price,members_id) values (?,?,?,?)",[
-        $category,$productName,$productValue,1
-    ]);
-    return redirect('productRegister');
-});
+Route::get('/productRegister1','productRegister@register');
 
 Route::get('/call','callController@index');
 
@@ -76,3 +68,5 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth:admin'], function() {
     Route::get('paymentsManage','Admin\paymentsManageController@index')->name('admin.paymentsManage');
     Route::get('salesManage','Admin\salesManageController@index')->name('admin.salesManage');
 });
+
+Route::get('/parchase1','tradeController@parchase');

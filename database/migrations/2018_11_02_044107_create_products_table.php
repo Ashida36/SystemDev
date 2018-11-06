@@ -18,6 +18,7 @@ class CreateProductsTable extends Migration
             $table->string('product_category');
             $table->string('product_name');
             $table->integer('product_price');
+            $table->boolean('confirm')->default(true);
         });
         Schema::table('products',function(Blueprint $table){
             $table->unsignedInteger('users_id');

@@ -12,13 +12,13 @@
             <a class="nav-link text-dark" href="{{route('admin.stockManage')}}">入庫管理</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link text-dark" href="/sendManage">出庫管理</a>
+            <a class="nav-link text-dark" href="{{route('admin.sendManage')}}">出庫管理</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link text-dark" href="/paymentsManage">入金管理</a>
+            <a class="nav-link text-dark" href="{{route('admin.paymentsManage')}}">入金管理</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link text-dark" href="/salesManage">売上金管理</a>
+            <a class="nav-link text-dark" href="{{route('admin.salesManage')}}">売上金管理</a>
         </li>
     </ul>
     <div class="container">
@@ -28,7 +28,7 @@
             <thead class="thead-light">
             <tr>
                 <th scope="col">顧客ID</th>
-                <th scope="col">商品名</th>
+                <th scope="col">注文ID</th>
                 <th scope="col">入庫</th>
                 <th scope="col">入金</th>
                 <th scope="col">出庫</th>
@@ -46,14 +46,14 @@
         </table>
         </form>
         <h5>取引済み</h5>
+        <form>
         <table class="table table-bordered">
             <thead class="thead-light">
             <tr>
                 <th scope="col">顧客ID</th>
+                <th scope="col">注文ID</th>
                 <th scope="col">商品名</th>
-                <th scope="col">入庫</th>
-                <th scope="col">入金</th>
-                <th scope="col">出庫</th>
+                <th scope="col">発注日</th>
             </tr>
             </thead>
             <tbody>
@@ -62,9 +62,9 @@
                 <td></td>
                 <td></td>
                 <td></td>
-                <td></td>
             </tr>
             </tbody>
         </table>
+        </form>
     </div>
 @endsection

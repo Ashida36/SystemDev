@@ -72,24 +72,44 @@
                             </select>
                         </div>
                         <div class="form-group">
-                            <button type="button" id="search" class="btn btn-dark btn-block form-control">検索</button>
+                            <button type="submit" id="search" class="btn btn-dark btn-block form-control">検索</button>
                         </div>
                     </form>
                 </td>
             </tr>
             </tbody>
         </table>
+
         <table class="table table-bordered">
             <thead class="thead-dark">
             <tr>
-                <th scope="col">ID</th>
+                <th scope="col">顧客ID</th>
+                <th scope="col">商品ID</th>
                 <th scope="col">商品名</th>
                 <th scope="col">金額</th>
+                <th scope="col">購入</th>
             </tr>
             </thead>
             <tbody>
 
+            <?php foreach($product as $products): ?>
+
+                <tr>
+                    <form method="get" action="parchase1">
+                        <div class="form-group">
+                    <td><?=$products->users_id?></td>
+                    <td><?=$products->product_id?></td>
+                    <input type="hidden" name="product_id" value="<?$products->product_id?>">
+                    <td><?=$products->product_name?></td>
+                    <td><?=$products->product_price?></td>
+                    <td><button type="submit" id="parchase" class="btn btn-dark btn-sm btn-block form-control">購入</button></td>
+                        </div>
+                    </form>
+                </tr>
+            <?php endforeach; ?>
+
             </tbody>
         </table>
+
     </div>
 @endsection

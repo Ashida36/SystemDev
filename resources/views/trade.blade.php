@@ -34,14 +34,21 @@
         <table class="table table-bordered">
             <thead class="thead-dark">
             <tr>
-                <th scope="col">ID</th>
+                <th scope="col">商品ID</th>
                 <th scope="col">ユーザー名</th>
                 <th scope="col">取引商品</th>
                 <th scope="col">金額</th>
             </tr>
             </thead>
             <tbody>
-
+            <?php foreach($trade as $trades): ?>
+                <tr>
+                    <td><?=$trades->product_id?></td>
+                    <td><?=$trades->user_id->user_name?></td>
+                    <td><?=$trades->product_name?></td>
+                    <td><?=$trades->product_price?></td>
+                </tr>
+            <?php endforeach; ?>
             </tbody>
         </table>
     </div>

@@ -26,12 +26,14 @@
             <thead class="thead-light">
                 <tr>
                     <th scope="col">出庫ID</th>
-                    <th scope="col">商品名</th>
-                    <th scope="col">出庫状況</th>
+                    <th scope="col">入庫ID</th>
+                    <th scope="col">入金ID</th>
+                    <th scope="col">出庫日</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
+                    <td></td>
                     <td></td>
                     <td></td>
                     <td></td>

@@ -62,13 +62,19 @@
                 <table class="table table-bordered">
                     <thead class="thead-dark">
                     <tr>
-                        <th scope="col">ID</th>
+                        <th scope="col">商品ID</th>
                         <th scope="col">商品名</th>
                         <th scope="col">金額</th>
                     </tr>
                     </thead>
                     <tbody>
-
+                    <?php foreach($product as $products): ?>
+                    <tr>
+                        <td><?=$products->product_id?></td>
+                        <td><?=$products->product_name?></td>
+                        <td><?=$products->product_price?></td>
+                    </tr>
+                    <?php endforeach; ?>
                     </tbody>
                 </table>
         </div>

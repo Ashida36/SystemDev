@@ -25,8 +25,8 @@
         <table class="table table-bordered">
             <thead class="thead-light">
             <tr>
-                <th scope="col">顧客ID</th>
                 <th scope="col">入金ID</th>
+                <th scope="col">入庫ID</th>
                 <th scope="col">運営口座番号</th>
                 <th scope="col">入金状況</th>
             </tr>
