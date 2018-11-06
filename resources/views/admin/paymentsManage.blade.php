@@ -1,12 +1,12 @@
 @extends('layouts.app_admin')
 
 @section('content')
-    <ul class="nav bg-light nav-fill">
+    <ul class="nav nav-fill">
         <li class="nav-item">
-            <a class="nav-link active text-dark" href="{{route('admin.home')}}">会員管理</a>
+            <a class="nav-link text-dark" href="{{ route('admin.home') }}">会員管理</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link text-dark" href="{{ route('admin.tradeManage') }}">取引管理</a>
+            <a class="nav-link text-dark active" href="{{route('admin.tradeManage')}}">取引管理</a>
         </li>
         <li class="nav-item">
             <a class="nav-link text-dark" href="{{route('admin.stockManage')}}">入庫管理</a>
@@ -24,20 +24,20 @@
     <div class="container">
         <table class="table table-bordered">
             <thead class="thead-light">
-                <tr>
-                    <th scope="col">ID</th>
-                    <th scope="col">名前</th>
-                    <th scope="col">E-Mail Address</th>
-                </tr>
+            <tr>
+                <th scope="col">顧客ID</th>
+                <th scope="col">入金ID</th>
+                <th scope="col">運営口座番号</th>
+                <th scope="col">入金状況</th>
+            </tr>
             </thead>
             <tbody>
-            <?php foreach($users as $user) :?>
-                <tr>
-                    <td><?=$user->id?></td>
-                    <td><?=$user->name?></td>
-                    <td><?=$user->email?></td>
-                </tr>
-            <?php endforeach?>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
             </tbody>
         </table>
     </div>

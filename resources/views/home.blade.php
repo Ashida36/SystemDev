@@ -3,13 +3,16 @@
 @section('content')
     <ul class="nav nav-fill bg-light">
         <li class="nav-item">
-            <a class="nav-link active text-dark">ホーム</a>
+            <a class="nav-link active text-dark" href="/home">ホーム</a>
         </li>
         <li class="nav-item">
             <a class="nav-link text-dark" href="/productRegister">商品登録</a>
         </li>
         <li class="nav-item">
             <a class="nav-link text-dark" href="/trade">取引情報</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link text-dark" href="/call">通知</a>
         </li>
     </ul>
     <div class="container">

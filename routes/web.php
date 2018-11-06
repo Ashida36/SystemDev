@@ -23,30 +23,7 @@ Route::get('/productRegister1',function(){
     return redirect('productRegister');
 });
 
-Route::get('/tradeManage', function () {
-    return view('tradeManage');
-});
-
-Route::get('/paymentsManage', function () {
-    return view('paymentsManage');
-});
-
-Route::get('/salesManage', function () {
-    return view('salesManage');
-});
-
-Route::get('/sendManage', function () {
-    return view('sendManage');
-});
-
-Route::get('/stockManage', function () {
-    return view('stockManage');
-});
-
-Route::get('/loginManage', function () {
-    return view('loginManage');
-});
-Auth::routes();
+Route::get('/call','callController@index');
 
 Route::get('/home', 'HomeController@index')->name('home');
 
@@ -94,5 +71,8 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth:admin'], function() {
     Route::post('logout',   'Admin\LoginController@logout')->name('admin.logout');
     Route::get('home',      'Admin\HomeController@index')->name('admin.home');
     Route::get('tradeManage','Admin\tradeManageController@index')->name('admin.tradeManage');
+    Route::get('stockManage','Admin\stockManageController@index')->name('admin.stockManage');
+    Route::get('sendManage','Admin\sendManageController@index')->name('admin.sendManage');
+    Route::get('paymentsManage','Admin\paymentsManageController@index')->name('admin.paymentsManage');
+    Route::get('salesManage','Admin\salesManageController@index')->name('admin.salesManage');
 });
-Route::get('/tradeManage','tradeManageController@index');

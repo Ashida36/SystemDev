@@ -6,10 +6,13 @@
                 <a href="/" class="nav-link text-dark">ホーム</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link text-dark active">商品登録</a>
+                <a class="nav-link text-dark active" href="/productRegister">商品登録</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link text-dark" href="/trade">取引情報</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-dark" href="/call">通知</a>
             </li>
         </ul>
         <div class="container">

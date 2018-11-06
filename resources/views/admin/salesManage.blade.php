@@ -25,19 +25,21 @@
         <table class="table table-bordered">
             <thead class="thead-light">
                 <tr>
-                    <th scope="col">ID</th>
-                    <th scope="col">名前</th>
-                    <th scope="col">E-Mail Address</th>
+                    <th scope="col">顧客ID</th>
+                    <th scope="col">合計売上金額</th>
+                    <th scope="col">1月</th>
+                    <th scope="col">2月</th>
+                    <th scope="col">3月</th>
                 </tr>
             </thead>
             <tbody>
-            <?php foreach($users as $user) :?>
                 <tr>
-                    <td><?=$user->id?></td>
-                    <td><?=$user->name?></td>
-                    <td><?=$user->email?></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
                 </tr>
-            <?php endforeach?>
             </tbody>
         </table>
     </div>
