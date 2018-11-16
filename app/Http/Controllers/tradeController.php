@@ -12,15 +12,24 @@ class tradeController extends Controller
         $this->middleware('auth');
     }
     public function index(){
-        return view("trade");
+        $id=Auth::id();
+        $trade=\DB::select("select * from products where who_trade=$id and confirm_trade=true");
+        $history=\DB::select("select * from products where who_trade=$id and confirm_trade=false");
+        return view('trade',[
+            "trade"=>$trade,"history"=>$history
+        ]);
     }
     public function parchase(){
         $id=Auth::id();
         $product_id=request()->get("product_id");
-        \DB::update("update products set confirm=0 where product_id=$product_id");
-        $trade=\DB::select("select * from products where users_id=$id");
+        $date=date('Y-m-d H:i:s');
+        \DB::update("update products set confirm=false,who_trade=$id where product_id=$product_id");
+        \DB::insert("insert into receives (receive_day,products_id,member_id) values(?,?,?)",[
+            $date,$product_id,$id]);
+        $trade=\DB::select("select * from products where who_trade=$id and confirm_trade=true");
+        $history=\DB::select("select * from products where who_trade=$id and confirm_trade=false");
         return view('trade',[
-            "trade"=>$trade
+            "trade"=>$trade,"history"=>$history
         ]);
     }
 }

@@ -16,6 +16,7 @@ class CreateOrdersTable extends Migration
         Schema::create('orders',function(Blueprint $table){
             $table->increments('order_id');
             $table->date('order_day');
+            $table->boolean('confirm')->default(true);
         });
         Schema::table('orders',function(Blueprint $table){
             $table->unsignedInteger('receives_id');

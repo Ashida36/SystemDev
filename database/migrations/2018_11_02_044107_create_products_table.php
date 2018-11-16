@@ -19,10 +19,12 @@ class CreateProductsTable extends Migration
             $table->string('product_name');
             $table->integer('product_price');
             $table->boolean('confirm')->default(true);
+            $table->boolean('confirm_trade')->default(true);
+            $table->integer('who_trade')->default(0);
         });
         Schema::table('products',function(Blueprint $table){
-            $table->unsignedInteger('users_id');
-            $table->foreign('users_id')->references('id')->on('users');
+            $table->unsignedInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users');
         });
     }
 
@@ -34,8 +36,8 @@ class CreateProductsTable extends Migration
     public function down()
     {
         Schema::dropIfExists('products');
-        Schema::table('stocks',function(Blueprint $table){
-            $table->dropForeign('stocks_products_id_foreign');
+        Schema::table('products',function(Blueprint $table){
+            $table->dropForeign('products_user_id_foreign');
         });
     }
 }

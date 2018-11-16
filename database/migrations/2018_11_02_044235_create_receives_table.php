@@ -16,6 +16,8 @@ class CreateReceivesTable extends Migration
         Schema::create('receives',function(Blueprint $table){
             $table->increments('receive_id');
             $table->date('receive_day');
+            $table->integer('member_id');
+            $table->boolean('confirm')->default(true);
         });
         Schema::table('receives',function(Blueprint $table){
             $table->unsignedInteger('products_id');

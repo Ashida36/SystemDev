@@ -69,4 +69,4 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth:admin'], function() {
     Route::get('salesManage','Admin\salesManageController@index')->name('admin.salesManage');
 });
 
-Route::get('/parchase1','tradeController@parchase');
+Route::post('/parchase','tradeController@parchase');

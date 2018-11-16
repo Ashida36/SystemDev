@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -24,7 +25,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $product=\DB::select("select * from products");
+        $product=\App\Product::where('confirm',true)->get();
         return view('home',[
             "product"=>$product
         ]);

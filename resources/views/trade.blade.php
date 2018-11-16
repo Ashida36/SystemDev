@@ -27,7 +27,14 @@
             </tr>
             </thead>
             <tbody>
-
+                <?php foreach($trade as $trades): ?>
+                <tr>
+                    <td><?=$trades->product_id?></td>
+                    <td><?=$trades->user_id?></td>
+                    <td><?=$trades->product_name?></td>
+                    <td><?=$trades->product_price?></td>
+                </tr>
+                <?php endforeach; ?>
             </tbody>
         </table>
         <h5>取引履歴</h5>
@@ -35,20 +42,20 @@
             <thead class="thead-dark">
             <tr>
                 <th scope="col">商品ID</th>
-                <th scope="col">ユーザー名</th>
+                <th scope="col">ユーザーID</th>
                 <th scope="col">取引商品</th>
                 <th scope="col">金額</th>
             </tr>
             </thead>
             <tbody>
-            <?php foreach($trade as $trades): ?>
+                <?php foreach($history as $historys): ?>
                 <tr>
-                    <td><?=$trades->product_id?></td>
-                    <td><?=$trades->user_id->user_name?></td>
-                    <td><?=$trades->product_name?></td>
-                    <td><?=$trades->product_price?></td>
+                    <td><?=$historys->product_id?></td>
+                    <td><?=$historys->user_id?></td>
+                    <td><?=$historys->product_name?></td>
+                    <td><?=$historys->product_price?></td>
                 </tr>
-            <?php endforeach; ?>
+                <?php endforeach; ?>
             </tbody>
         </table>
     </div>

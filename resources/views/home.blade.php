@@ -87,7 +87,7 @@
                 <th scope="col">商品ID</th>
                 <th scope="col">商品名</th>
                 <th scope="col">金額</th>
-                <th scope="col">購入</th>
+                <th scope="col">注文</th>
             </tr>
             </thead>
             <tbody>
@@ -95,16 +95,17 @@
             <?php foreach($product as $products): ?>
 
                 <tr>
-                    <form method="get" action="parchase1">
-                        <div class="form-group">
-                    <td><?=$products->users_id?></td>
+                    <td><?=$products->user_id?></td>
                     <td><?=$products->product_id?></td>
-                    <input type="hidden" name="product_id" value="<?$products->product_id?>">
                     <td><?=$products->product_name?></td>
                     <td><?=$products->product_price?></td>
-                    <td><button type="submit" id="parchase" class="btn btn-dark btn-sm btn-block form-control">購入</button></td>
-                        </div>
-                    </form>
+                    <td>
+                        <form method="post" action="/parchase">
+                            @csrf
+                            <input type="hidden" name="product_id" value="<?=$products->product_id?>">
+                            <button type="submit" class="btn btn-dark btn-sm btn-block form-control">購入</button>
+                        </form>
+                    </td>
                 </tr>
             <?php endforeach; ?>
 

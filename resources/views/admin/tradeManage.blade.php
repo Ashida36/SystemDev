@@ -35,13 +35,15 @@
             </tr>
             </thead>
             <tbody>
+                <?php foreach($trade as $trades): ?>
                 <tr>
-                    <td></td>
-                    <td></td>
-                    <td><button type="submit" name="action" value="stocked" class="btn btn-block btn-sm btn-dark">入庫</button></td>
-                    <td><button type="submit" name="action" value="sended" class="btn btn-block btn-sm btn-dark">出庫</button></td>
-                    <td><button type="submit" name="action" value="payed" class="btn btn-block btn-sm btn-dark">入金</button></td>
+                    <td><?=$trades->product->user_id?></td>
+                    <td><?=$trades->receive_id?></td>
+                    <td><button type="submit" name="action" value="stocked" class="btn btn-block btn-sm btn-secondary">入庫</button></td>
+                    <td><button type="submit" name="action" value="sended" class="btn btn-block btn-sm btn-secondary">出庫</button></td>
+                    <td><button type="submit" name="action" value="payed" class="btn btn-block btn-sm btn-secondary">入金</button></td>
                 </tr>
+                <?php endforeach; ?>
             </tbody>
         </table>
         </form>
@@ -57,12 +59,15 @@
             </tr>
             </thead>
             <tbody>
+            <?php foreach($history as $historys): ?>
             <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
+                <td><?=$historys->user_id?></td>
+                <td><?=$historys->receive_id?></td>
+                <td><button type="submit" name="action" value="stocked" class="btn btn-block btn-sm btn-secondary">入庫</button></td>
+                <td><button type="submit" name="action" value="sended" class="btn btn-block btn-sm btn-secondary">出庫</button></td>
+                <td><button type="submit" name="action" value="payed" class="btn btn-block btn-sm btn-secondary">入金</button></td>
             </tr>
+            <?php endforeach; ?>
             </tbody>
         </table>
         </form>
