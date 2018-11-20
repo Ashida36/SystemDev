@@ -12,6 +12,24 @@ class stockManageController extends Controller
         $this->middleware('auth:admin');
     }
     public function index(){
-        return view("admin.stockManage");
+        $stock=\App\Stock::all();
+        return view("admin.stockManage",[
+            "stock"=>$stock
+        ]);
+    }
+    public function stocked(){
+        $date=date('Y-m-d H:i:s');
+        $receives_id=request()->get("stock");
+        $products=\App\Receive::where('receive_id','=',$receives_id)->get();
+        $product_id=0;
+        foreach($products as $product) {
+            $product_id=$product->products_id;
+            }
+        \DB::insert("insert into stocks(stock_day,products_id,receives_id) values(?,?,?)",[
+                  $date,$product_id,$receives_id]);
+        $stock=\App\Stock::all();
+        return view("admin.stockManage",[
+            "stock"=>$stock
+        ]);
     }
 }

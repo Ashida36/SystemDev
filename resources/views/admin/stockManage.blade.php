@@ -32,12 +32,13 @@
                 </tr>
             </thead>
             <tbody>
+            <?php foreach($stock as $stocks):?>
                 <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <td><?=$stocks->stock_id?></td>
+                    <td><?=$stocks->product->product_name?></td>
+                    <td>
                 </tr>
+            <?php endforeach;?>
             </tbody>
         </table>
     </div>

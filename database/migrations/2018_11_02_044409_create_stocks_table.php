@@ -20,8 +20,8 @@ class CreateStocksTable extends Migration
         Schema::table('stocks',function(Blueprint $table){
             $table->unsignedInteger('products_id');
             $table->foreign('products_id')->references('product_id')->on('products');
-            $table->unsignedInteger('orders_id');
-            $table->foreign('orders_id')->references('order_id')->on('orders');
+            $table->unsignedInteger('receives_id');
+            $table->foreign('receives_id')->references('receive_id')->on('receives');
         });
 
     }
@@ -35,7 +35,10 @@ class CreateStocksTable extends Migration
     {
         Schema::dropIfExists('stocks');
         Schema::table('stocks',function(Blueprint $table){
-            $table->dropForeign('stocks_orders_id_foreign');
+            $table->dropForeign('stocks_products_id_foreign');
+        });
+        Schema::table('stocks',function(Blueprint $table){
+            $table->dropForeign('stocks_receives_id_foreign');
         });
     }
 }

@@ -23,12 +23,12 @@
     </ul>
     <div class="container">
         <h5>取引中</h5>
-        <form method="post" action="">
         <table class="table table-bordered">
             <thead class="thead-light">
             <tr>
                 <th scope="col">顧客ID</th>
                 <th scope="col">注文ID</th>
+                <th scope="col">商品名</th>
                 <th scope="col">入庫</th>
                 <th scope="col">入金</th>
                 <th scope="col">出庫</th>
@@ -39,14 +39,30 @@
                 <tr>
                     <td><?=$trades->product->user_id?></td>
                     <td><?=$trades->receive_id?></td>
-                    <td><button type="submit" name="action" value="stocked" class="btn btn-block btn-sm btn-secondary">入庫</button></td>
-                    <td><button type="submit" name="action" value="sended" class="btn btn-block btn-sm btn-secondary">出庫</button></td>
-                    <td><button type="submit" name="action" value="payed" class="btn btn-block btn-sm btn-secondary">入金</button></td>
+                    <td><?=$trades->product->product_name?></td>
+                    <td>
+                        <form method="post" action="{{route('admin.stocked')}}">
+                            @csrf
+                            <input type="hidden" name="stock" value="<?=$trades->receive_id?>">
+                            <button type="submit" class="btn btn-block btn-sm btn-secondary">入庫</button>
+                        </form>
+                    </td>
+                    <td>
+                        <form method="post" action="">
+                            @csrf
+                            <button type="submit" name="sended" value="sended" class="btn btn-block btn-sm btn-secondary">出庫</button>
+                        </form>
+                    </td>
+                    <td>
+                        <form method="post" action="">
+                            @csrf
+                            <button type="submit" name="payed" value="payed" class="btn btn-block btn-sm btn-secondary">入金</button>
+                        </form>
+                    </td>
                 </tr>
                 <?php endforeach; ?>
             </tbody>
         </table>
-        </form>
         <h5>取引済み</h5>
         <form>
         <table class="table table-bordered">
@@ -59,15 +75,15 @@
             </tr>
             </thead>
             <tbody>
-            <?php foreach($history as $historys): ?>
-            <tr>
-                <td><?=$historys->user_id?></td>
-                <td><?=$historys->receive_id?></td>
-                <td><button type="submit" name="action" value="stocked" class="btn btn-block btn-sm btn-secondary">入庫</button></td>
-                <td><button type="submit" name="action" value="sended" class="btn btn-block btn-sm btn-secondary">出庫</button></td>
-                <td><button type="submit" name="action" value="payed" class="btn btn-block btn-sm btn-secondary">入金</button></td>
-            </tr>
-            <?php endforeach; ?>
+                <?php foreach($history as $historys): ?>
+                <tr>
+                    <td><?=$historys->user_id?></td>
+                    <td><?=$historys->receive_id?></td>
+                    <td><button type="submit" name="action" value="stocked" class="btn btn-block btn-sm btn-secondary">入庫</button></td>
+                    <td><button type="submit" name="action" value="sended" class="btn btn-block btn-sm btn-secondary">出庫</button></td>
+                    <td><button type="submit" name="action" value="payed" class="btn btn-block btn-sm btn-secondary">入金</button></td>
+                </tr>
+                <?php endforeach; ?>
             </tbody>
         </table>
         </form>
