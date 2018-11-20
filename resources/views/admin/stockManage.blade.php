@@ -36,7 +36,8 @@
                 <tr>
                     <td><?=$stocks->stock_id?></td>
                     <td><?=$stocks->product->product_name?></td>
-                    <td>
+                    <td><button class="btn btn-block btn-sm btn-secondary" disabled>検品済</button></td>
+                    <td><button class="btn btn-block btn-sm btn-secondary" disabled>入庫済</button></td>
                 </tr>
             <?php endforeach;?>
             </tbody>

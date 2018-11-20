@@ -23,7 +23,7 @@ class stockManageController extends Controller
         $products=\App\Receive::where('receive_id','=',$receives_id)->get();
         $product_id=0;
         foreach($products as $product) {
-            $product_id=$product->products_id;
+            $product_id=$product->product->product_id;
             }
         \DB::insert("insert into stocks(stock_day,products_id,receives_id) values(?,?,?)",[
                   $date,$product_id,$receives_id]);

@@ -50,13 +50,13 @@
                     <td>
                         <form method="post" action="">
                             @csrf
-                            <button type="submit" name="sended" value="sended" class="btn btn-block btn-sm btn-secondary">出庫</button>
+                            <button type="submit" name="sended" value="sended" class="btn btn-block btn-sm btn-secondary" disabled>出庫</button>
                         </form>
                     </td>
                     <td>
                         <form method="post" action="">
                             @csrf
-                            <button type="submit" name="payed" value="payed" class="btn btn-block btn-sm btn-secondary">入金</button>
+                            <button type="submit" name="payed" value="payed" class="btn btn-block btn-sm btn-secondary" disabled>入金</button>
                         </form>
                     </td>
                 </tr>
@@ -79,9 +79,9 @@
                 <tr>
                     <td><?=$historys->user_id?></td>
                     <td><?=$historys->receive_id?></td>
-                    <td><button type="submit" name="action" value="stocked" class="btn btn-block btn-sm btn-secondary">入庫</button></td>
-                    <td><button type="submit" name="action" value="sended" class="btn btn-block btn-sm btn-secondary">出庫</button></td>
-                    <td><button type="submit" name="action" value="payed" class="btn btn-block btn-sm btn-secondary">入金</button></td>
+                    <td><button type="submit" name="action" value="stocked" class="btn btn-block btn-sm btn-secondary" disabled>入庫</button></td>
+                    <td><button type="submit" name="action" value="sended" class="btn btn-block btn-sm btn-secondary" disabled>出庫</button></td>
+                    <td><button type="submit" name="action" value="payed" class="btn btn-block btn-sm btn-secondary" disabled>入金</button></td>
                 </tr>
                 <?php endforeach; ?>
             </tbody>
