@@ -25,6 +25,7 @@ class stockManageController extends Controller
         foreach($products as $product) {
             $product_id=$product->product->product_id;
             }
+        \DB::update("update receives set nyuuko=true where receive_id=$receives_id");
         \DB::insert("insert into stocks(stock_day,products_id,receives_id) values(?,?,?)",[
                   $date,$product_id,$receives_id]);
         $stock=\App\Stock::all();

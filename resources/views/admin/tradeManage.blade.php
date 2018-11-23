@@ -21,6 +21,7 @@
             <a class="nav-link text-dark" href="{{route('admin.salesManage')}}">売上金管理</a>
         </li>
     </ul>
+    <?php $disable="enabled";?>
     <div class="container">
         <h5>取引中</h5>
         <table class="table table-bordered">
@@ -36,6 +37,7 @@
             </thead>
             <tbody>
                 <?php foreach($trade as $trades): ?>
+                <?php if(($trades->nyuuko)==true)$disable="disabled"; else $disable="enabled";?>
                 <tr>
                     <td><?=$trades->product->user_id?></td>
                     <td><?=$trades->receive_id?></td>
@@ -44,7 +46,7 @@
                         <form method="post" action="{{route('admin.stocked')}}">
                             @csrf
                             <input type="hidden" name="stock" value="<?=$trades->receive_id?>">
-                            <button type="submit" class="btn btn-block btn-sm btn-secondary">入庫</button>
+                            <button type="submit" class="btn btn-block btn-sm btn-secondary" <?=$disable?>>入庫</button>
                         </form>
                     </td>
                     <td>
