@@ -21,7 +21,9 @@
             <a class="nav-link text-dark" href="{{route('admin.salesManage')}}">売上金管理</a>
         </li>
     </ul>
-    <?php $disable="enabled";?>
+    <?php $disable1="enabled";?>
+    <?php $disable2="disabled";?>
+    <?php $disable3="disabled";?>
     <div class="container">
         <h5>取引中</h5>
         <table class="table table-bordered">
@@ -37,7 +39,11 @@
             </thead>
             <tbody>
                 <?php foreach($trade as $trades): ?>
-                <?php if(($trades->nyuuko)==true)$disable="disabled"; else $disable="enabled";?>
+                <?php if(($trades->nyuuko)==true)$disable1="disabled"; else $disable1="enabled";?>
+                <?php if(($trades->nyuuko)==true)$disable2="enabled";?>
+                <?php if(($trades->syukko)==true){$disable2="disabled";$disable3="enabled";}?>
+                <?php if(($trades->nyuukin)==true)$disable3="disabled";?>
+
                 <tr>
                     <td><?=$trades->product->user_id?></td>
                     <td><?=$trades->receive_id?></td>
@@ -46,19 +52,21 @@
                         <form method="post" action="{{route('admin.stocked')}}">
                             @csrf
                             <input type="hidden" name="stock" value="<?=$trades->receive_id?>">
-                            <button type="submit" class="btn btn-block btn-sm btn-secondary" <?=$disable?>>入庫</button>
+                            <button type="submit" class="btn btn-block btn-sm btn-secondary" <?=$disable1?>>入庫</button>
+                        </form>
+                    </td>
+                    <td>
+                        <form method="post" action="{{route('admin.sended')}}">
+                            @csrf
+                            <input type="hidden" name="send" value="<?=$trades->receive_id?>">
+                            <button type="submit" class="btn btn-block btn-sm btn-secondary" <?=$disable2?>>出庫</button>
                         </form>
                     </td>
                     <td>
                         <form method="post" action="">
                             @csrf
-                            <button type="submit" name="sended" value="sended" class="btn btn-block btn-sm btn-secondary" disabled>出庫</button>
-                        </form>
-                    </td>
-                    <td>
-                        <form method="post" action="">
-                            @csrf
-                            <button type="submit" name="payed" value="payed" class="btn btn-block btn-sm btn-secondary" disabled>入金</button>
+                            <input type="hidden" name="pay" value="<?=$trades->receive_id?>">
+                            <button type="submit" class="btn btn-block btn-sm btn-secondary" <?=$disable3?>>入金</button>
                         </form>
                     </td>
                 </tr>

@@ -68,6 +68,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth:admin'], function() {
     Route::get('paymentsManage','Admin\paymentsManageController@index')->name('admin.paymentsManage');
     Route::get('salesManage','Admin\salesManageController@index')->name('admin.salesManage');
     Route::post('stocked','Admin\stockManageController@stocked')->name('admin.stocked');
+    Route::post('sended','Admin\sendManageController@sended')->name('admin.sended');
 });
 
 Route::post('/parchase','tradeController@parchase');

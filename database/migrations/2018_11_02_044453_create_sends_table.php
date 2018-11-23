@@ -20,8 +20,10 @@ class CreateSendsTable extends Migration
         Schema::table('sends',function(Blueprint $table){
             $table->unsignedInteger('stocks_id');
             $table->foreign('stocks_id')->references('stock_id')->on('stocks');
-            $table->unsignedInteger('payments_id');
-            $table->foreign('payments_id')->references('payment_id')->on('payments');
+            $table->unsignedInteger('products_id');
+            $table->foreign('products_id')->references('product_id')->on('products');
+            $table->unsignedInteger('receives_id');
+            $table->foreign('receives_id')->references('receive_id')->on('receives');
         });
     }
 
@@ -38,6 +40,12 @@ class CreateSendsTable extends Migration
         });
         Schema::table('sends',function(Blueprint $table){
             $table->dropForeign('sends_payments_id_foreign');
+        });
+        Schema::table('sends',function(Blueprint $table){
+            $table->dropForeign('sends_products_id_foreign');
+        });
+        Schema::table('sends',function(Blueprint $table){
+            $table->dropForeign('sends_receives_id_foreign');
         });
     }
 }

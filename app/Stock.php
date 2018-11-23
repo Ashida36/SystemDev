@@ -13,4 +13,7 @@ class Stock extends Model
     public function receive(){
         return $this->hasOne('\App\Receive','receive_id');
     }
+    public function send(){
+        return $this->hasOne('\App\Send','stocks_id');
+    }
 }

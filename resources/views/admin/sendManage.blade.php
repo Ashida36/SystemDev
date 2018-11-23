@@ -27,17 +27,17 @@
                 <tr>
                     <th scope="col">出庫ID</th>
                     <th scope="col">入庫ID</th>
-                    <th scope="col">入金ID</th>
                     <th scope="col">出庫日</th>
                 </tr>
             </thead>
             <tbody>
+            <?php foreach($send as $sends):?>
                 <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <td><?=$sends->send_id?></td>
+                    <td><?=$sends->stock->stock_id?></td>
+                    <td><?=$sends->send_day?></td>
                 </tr>
+            <?php endforeach;?>
             </tbody>
         </table>
     </div>
