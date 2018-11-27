@@ -32,7 +32,6 @@ class LoginController extends Controller
     {
         return view('admin.login');
     }
-
     protected function guard()
     {
         return Auth::guard('admin');

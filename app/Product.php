@@ -10,4 +10,7 @@ class Product extends Model
     public function stock(){
         return $this->hasOne('\App\Stock','products_id');
     }
+    public function receive(){
+        return $this->hasOne('\App\Receive','products_id');
+    }
 }

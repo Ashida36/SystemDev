@@ -8,6 +8,6 @@ class Receive extends Model
 {
     protected $primaryKey='receive_id';
     public function product(){
-        return $this->hasOne('\App\Product','product_id');
+        return $this->belongsTo('\App\Product','products_id');
     }
 }

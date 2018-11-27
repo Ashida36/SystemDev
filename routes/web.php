@@ -17,10 +17,6 @@ Route::get('/productRegister1','productRegister@register');
 
 Route::get('/call','callController@index');
 
-Route::get('/home', 'HomeController@index')->name('home');
-
-Route::get('/', 'HomeController@index')->name('home');
-
 Route::get('/productRegister','productRegister@index');
 
 Route::get('/trade','tradeController@index');
@@ -31,18 +27,18 @@ Auth::routes();
 |--------------------------------------------------------------------------
 | 1) User 認証不要
 |--------------------------------------------------------------------------
-
+*/
 Route::get('/', function () { return redirect('/home'); });
 
-
+/*
 |--------------------------------------------------------------------------
 | 2) User ログイン後
 |--------------------------------------------------------------------------
-
+*/
 Route::group(['middleware' => 'auth:user'], function() {
     Route::get('/home', 'HomeController@index')->name('home');
+    Route::get('/', 'HomeController@index')->name('home');
 });
-*/
 /*
 |--------------------------------------------------------------------------
 | 3) Admin 認証不要
@@ -53,7 +49,6 @@ Route::group(['prefix' => 'admin'], function() {
     Route::get('login',     'Admin\LoginController@showLoginForm')->name('admin.login');
     Route::post('login',    'Admin\LoginController@login');
 });
-
 /*
 |--------------------------------------------------------------------------
 | 4) Admin ログイン後
