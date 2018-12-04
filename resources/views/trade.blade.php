@@ -21,7 +21,7 @@
             <thead class="thead-dark">
             <tr>
                 <th scope="col">ID</th>
-                <th scope="col">ユーザー名</th>
+                <th scope="col">ユーザーID</th>
                 <th scope="col">取引商品</th>
                 <th scope="col">金額</th>
             </tr>

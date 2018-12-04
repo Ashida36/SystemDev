@@ -85,11 +85,10 @@
             <tbody>
                 <?php foreach($history as $historys): ?>
                 <tr>
-                    <td><?=$historys->user_id?></td>
+                    <td><?=$historys->member_id?></td>
                     <td><?=$historys->receive_id?></td>
-                    <td><button type="submit" name="action" value="stocked" class="btn btn-block btn-sm btn-secondary" disabled>入庫</button></td>
-                    <td><button type="submit" name="action" value="sended" class="btn btn-block btn-sm btn-secondary" disabled>出庫</button></td>
-                    <td><button type="submit" name="action" value="payed" class="btn btn-block btn-sm btn-secondary" disabled>入金</button></td>
+                    <td><?=$historys->product->product_name?></td>
+                    <td><?=$historys->receive_day?></td>
                 </tr>
                 <?php endforeach; ?>
             </tbody>

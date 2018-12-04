@@ -20,6 +20,7 @@ class paymentsManageController extends Controller
     public function payed(){
         $receives_id=request()->get("pay");
         \DB::update("update receives set nyuukin=true where receive_id=$receives_id");
+        \DB::update("update receives set confirm=false where receive_id=$receives_id");
         \DB::insert("insert into payments(payment_confirm,manages_id,receives_id) values(?,?,?)",[
             true,1,$receives_id]);
         $pay=\App\Payment::all();
