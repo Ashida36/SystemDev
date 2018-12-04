@@ -25,7 +25,16 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $product=\App\Product::where('confirm',true)->get();
+        $product=\App\Product::where('confirm','=',true)->get();
+        return view('home',[
+            "product"=>$product
+        ]);
+    }
+    public function search(){
+        $category=request()->get("category");
+        $name=request()->get("productName");
+        $money=request()->get("money");
+        $product=\DB::select("select * from products where product_category=$category and product_name=$name and product_price <= $money and confirm=true");
         return view('home',[
             "product"=>$product
         ]);

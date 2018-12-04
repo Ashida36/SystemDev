@@ -67,3 +67,4 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth:admin'], function() {
 });
 
 Route::post('/parchase','tradeController@parchase');
+Route::post('/search','HomeController@search');

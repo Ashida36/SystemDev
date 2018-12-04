@@ -16,14 +16,14 @@
         </li>
     </ul>
     <div class="container">
+        <form action="/search" method="get">
         <table class="table">
             <tbody>
             <tr>
                 <th scope="row">カテゴリ</th>
                 <td>
-                    <form action="index1" method="post">
-                        <div class="form-group">
-                            <select class="form-control" name="category">
+                    <div class="form-group">
+                        <select class="form-control" name="category">
                                 <option id="null">カテゴリ選択</option>
                                 <option>レディース</option>
                                 <option>メンズ</option>
@@ -35,50 +35,38 @@
                                 <option>その他</option>
                             </select>
                         </div>
-                    </form>
                 </td>
             </tr>
             <tr>
                 <th scope="row">商品名</th>
                 <td>
-                    <form>
-                        <div class="form-group">
-                            <input type="text" class="form-control" id="productName" placeholder="商品名">
-                        </div>
-                    </form>
+                    <div class="form-group">
+                        <input type="text" class="form-control" name="productName" placeholder="商品名">
+                    </div>
                 </td>
             </tr>
             <tr>
                 <th scope="row">金額</th>
                 <td>
-                    <form class="form-inline">
-                        <div class="form-group">
-                            <select class="form-control" id="money">
-                                <option>0</option>
-                                <option>1000</option>
-                                <option>10000</option>
-                                <option>100000</option>
-                                <option>1000000</option>
-                            </select>
-                        </div>
-                        ～
-                        <div class="form-group">
-                            <select class="form-control" id="money1">
-                                <option>999</option>
-                                <option>9999</option>
-                                <option>99999</option>
-                                <option>999999</option>
-                                <option>9999999</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <button type="submit" id="search" class="btn btn-dark btn-block form-control">検索</button>
-                        </div>
-                    </form>
+                    <div class="form-group form-inline">
+                        <select class="form-control">
+                               <option>0</option>
+                        </select>
+                    ～
+                        <select class="form-control" name="money">
+                            <option value="999">999</option>
+                            <option value="9999">9,999</option>
+                            <option value="99999">99,999</option>
+                            <option value="999999">999,999</option>
+                            <option value="9999999">9,999,999</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-dark form-control">検索</button>
                 </td>
             </tr>
             </tbody>
         </table>
+        </form>
 
         <table class="table table-bordered">
             <thead class="thead-dark">
