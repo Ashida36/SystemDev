@@ -19,7 +19,6 @@ class CreateManagesTable extends Migration
             $table->string('manage_postal');
             $table->string('manage_address');
         });
-
     }
 
     /**

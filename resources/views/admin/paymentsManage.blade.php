@@ -17,9 +17,6 @@
         <li class="nav-item">
             <a class="nav-link text-dark" href="{{route('admin.paymentsManage')}}">入金管理</a>
         </li>
-        <li class="nav-item">
-            <a class="nav-link text-dark" href="{{route('admin.salesManage')}}">売上金管理</a>
-        </li>
     </ul>
     <div class="container">
         <table class="table table-bordered">
@@ -32,12 +29,14 @@
             </tr>
             </thead>
             <tbody>
+            <?php foreach($pay as $pays):?>
             <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
+                <td><?=$pays->payment_id?></td>
+                <td><?=$pays->receives_id?></td>
+                <td><?=$pays->manage->manage_account?></td>
+                <td><button class="btn btn-block btn-sm btn-secondary" disabled>入金済</button></td>
             </tr>
+            <?php endforeach;?>
             </tbody>
         </table>
     </div>

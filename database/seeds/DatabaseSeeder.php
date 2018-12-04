@@ -11,8 +11,8 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        DB::insert("insert into members (member_name,member_kana,member_sex,member_postal,member_address,member_tel,member_birth) values(?,?,?,?,?,?,?)",[
-    "hoge","hoge","1","hoge","hoge","hoge",'2000-10-11'
+        DB::insert("insert into manages (manage_account,manage_postal,manage_address) values(?,?,?)",[
+    '12345678',"123-4567","北海道札幌"
         ]);
     }
 }

@@ -17,10 +17,9 @@
         <li class="nav-item">
             <a class="nav-link text-dark" href="{{route('admin.paymentsManage')}}">入金管理</a>
         </li>
-        <li class="nav-item">
-            <a class="nav-link text-dark" href="{{route('admin.salesManage')}}">売上金管理</a>
-        </li>
     </ul>
+    <?php $disable2="disabled";?>
+    <?php $disable3="disabled";?>
     <div class="container">
         <h5>取引中</h5>
         <table class="table table-bordered">
@@ -61,7 +60,7 @@
                         </form>
                     </td>
                     <td>
-                        <form method="post" action="">
+                        <form method="post" action="{{route('admin.payed')}}">
                             @csrf
                             <input type="hidden" name="pay" value="<?=$trades->receive_id?>">
                             <button type="submit" class="btn btn-block btn-sm btn-secondary" <?=$disable3?>>入金</button>
