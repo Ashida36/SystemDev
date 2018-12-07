@@ -27,6 +27,7 @@
             <tr>
                 <th scope="col">顧客ID</th>
                 <th scope="col">注文ID</th>
+                <th scope="col">商品ID</th>
                 <th scope="col">商品名</th>
                 <th scope="col">入庫</th>
                 <th scope="col">入金</th>
@@ -42,6 +43,7 @@
                 <tr>
                     <td><?=$trades->member_id?></td>
                     <td><?=$trades->receive_id?></td>
+                    <td><?=$trades->product->product_id?></td>
                     <td><?=$trades->product->product_name?></td>
                     <td>
                         <form method="post" action="{{route('admin.stocked')}}">
@@ -78,6 +80,7 @@
             <tr>
                 <th scope="col">顧客ID</th>
                 <th scope="col">注文ID</th>
+                <th scope="col">商品ID</th>
                 <th scope="col">商品名</th>
                 <th scope="col">発注日</th>
             </tr>
@@ -87,6 +90,7 @@
                 <tr>
                     <td><?=$historys->member_id?></td>
                     <td><?=$historys->receive_id?></td>
+                    <td><?=$historys->product->product_id?></td>
                     <td><?=$historys->product->product_name?></td>
                     <td><?=$historys->receive_day?></td>
                 </tr>

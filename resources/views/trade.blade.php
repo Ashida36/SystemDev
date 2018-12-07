@@ -11,9 +11,6 @@
         <li class="nav-item">
             <a class="nav-link text-dark active" href="/trade">取引情報</a>
         </li>
-        <li class="nav-item">
-            <a class="nav-link text-dark" href="/call">通知</a>
-        </li>
     </ul>
     <div class="container">
         <h5>取引中</h5>

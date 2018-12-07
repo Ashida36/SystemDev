@@ -24,6 +24,8 @@
                 <tr>
                     <th scope="col">出庫ID</th>
                     <th scope="col">入庫ID</th>
+                    <th scope="col">商品ID</th>
+                    <th scope="col">商品名</th>
                     <th scope="col">出庫日</th>
                 </tr>
             </thead>
@@ -32,6 +34,8 @@
                 <tr>
                     <td><?=$sends->send_id?></td>
                     <td><?=$sends->stock->stock_id?></td>
+                    <td><?=$sends->stock->product->product_id?></td>
+                    <td><?=$sends->stock->product->product_name?></td>
                     <td><?=$sends->send_day?></td>
                 </tr>
             <?php endforeach;?>

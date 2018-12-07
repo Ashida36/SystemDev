@@ -23,6 +23,7 @@
             <thead class="thead-light">
                 <tr>
                     <th scope="col">入庫ID</th>
+                    <th scope="col">商品ID</th>
                     <th scope="col">商品名</th>
                     <th scope="col">検品状況</th>
                     <th scope="col">入庫状況</th>
@@ -32,6 +33,7 @@
             <?php foreach($stock as $stocks):?>
                 <tr>
                     <td><?=$stocks->stock_id?></td>
+                    <td><?=$stocks->product->product_id?></td>
                     <td><?=$stocks->product->product_name?></td>
                     <td><button class="btn btn-block btn-sm btn-secondary" disabled>検品済</button></td>
                     <td><button class="btn btn-block btn-sm btn-secondary" disabled>入庫済</button></td>

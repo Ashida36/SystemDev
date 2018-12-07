@@ -15,8 +15,6 @@
 
 Route::get('/productRegister1','productRegister@register');
 
-Route::get('/call','callController@index');
-
 Route::get('/productRegister','productRegister@index');
 
 Route::get('/trade','tradeController@index');
@@ -67,4 +65,3 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth:admin'], function() {
 });
 
 Route::post('/parchase','tradeController@parchase');
-Route::post('/search','HomeController@search');
