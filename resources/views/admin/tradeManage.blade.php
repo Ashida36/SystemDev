@@ -30,8 +30,8 @@
                 <th scope="col">商品ID</th>
                 <th scope="col">商品名</th>
                 <th scope="col">入庫</th>
-                <th scope="col">入金</th>
                 <th scope="col">出庫</th>
+                <th scope="col">入金</th>
             </tr>
             </thead>
             <tbody>

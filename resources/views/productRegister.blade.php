@@ -74,5 +74,8 @@
                     <?php endforeach; ?>
                     </tbody>
                 </table>
+            <div class="container">
+                <div class="btn btn-dark float-right" onclick="window.location.reload();">更新</div>
+            </div>
         </div>
 @endsection

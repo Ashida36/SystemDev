@@ -19,7 +19,7 @@
             <tr>
                 <th scope="col">ID</th>
                 <th scope="col">ユーザーID</th>
-                <th scope="col">取引商品</th>
+                <th scope="col">商品名</th>
                 <th scope="col">金額</th>
             </tr>
             </thead>
@@ -40,7 +40,7 @@
             <tr>
                 <th scope="col">商品ID</th>
                 <th scope="col">ユーザーID</th>
-                <th scope="col">取引商品</th>
+                <th scope="col">商品名</th>
                 <th scope="col">金額</th>
             </tr>
             </thead>
@@ -55,5 +55,8 @@
                 <?php endforeach; ?>
             </tbody>
         </table>
+        <div class="container">
+            <div class="btn btn-dark float-right" onclick="window.location.reload();">更新</div>
+        </div>
     </div>
 @endsection
